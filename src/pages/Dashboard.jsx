@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import Layout from "../components/Layout";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-
-  return (
+ return (
+  <Layout>{
     <div className="page">
       <div
         style={{
@@ -48,5 +49,8 @@ export default function Dashboard() {
         </div>
       </div>
     </div>
-  );
+}
+  </Layout>
+);
+
 }

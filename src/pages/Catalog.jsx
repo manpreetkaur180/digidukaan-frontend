@@ -1,7 +1,9 @@
 import { products } from "../data/products";
+import Layout from "../components/Layout";
 
 export default function Catalog() {
   return (
+    <Layout>{
     <div className="page">
       {/* Header */}
       <div
@@ -107,5 +109,7 @@ export default function Catalog() {
         ))}
       </div>
     </div>
+    }
+    </Layout>
   );
 }

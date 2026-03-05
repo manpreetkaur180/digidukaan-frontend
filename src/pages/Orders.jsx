@@ -1,3 +1,5 @@
+import Layout from "../components/Layout";
+
 export default function Orders() {
   const orders = [
     {
@@ -30,6 +32,7 @@ export default function Orders() {
   };
 
   return (
+    <Layout>{
     <div className="page">
       {/* Header */}
       <div
@@ -84,5 +87,7 @@ export default function Orders() {
         ))}
       </div>
     </div>
+}
+</Layout>
   );
 }
