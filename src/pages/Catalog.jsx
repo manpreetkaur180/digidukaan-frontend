@@ -140,7 +140,7 @@ export default function Catalog() {
                                                             navigate("/cart");
                                                         }}
                                                     >
-                                                        Add to list
+                                                        Add to Cart
                                                     </button>
                                                 </div>
 
