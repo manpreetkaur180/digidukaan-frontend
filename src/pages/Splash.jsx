@@ -4,51 +4,66 @@ export default function Splash() {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="page"
-      style={{
-        background:
-          "linear-gradient(160deg, #1976D2 0%, #1565C0 50%, #0D47A1 100%)",
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "40px",
-        textAlign: "center",
-      }}
-    >
-      <div style={{ fontSize: "60px" }}>🏪</div>
-      <h1 style={{ fontSize: "36px", marginTop: "10px" }}>
-        DigiDukaan
-      </h1>
-      <p style={{ marginTop: "8px", opacity: 0.8 }}>
-        B2B Procurement Platform
-      </p>
+    <div className="layout-container" style={{ background: "linear-gradient(135deg, #1976D2, #1565C0, #0D47A1)", minHeight: "100vh" }}>
+      <div className="page-content" style={{ display: "flex", flexDirection: "column", padding: "40px 24px" }}>
 
-      <div
-        style={{
-          marginTop: "30px",
-          background: "white",
-          color: "#1976D2",
-          padding: "12px 20px",
-          borderRadius: "16px",
-          fontWeight: 600,
-        }}
-      >
-        🌐 Powered by ONDC Network
+        {/* Top Spacer */}
+        <div style={{ flex: 1 }} />
+
+        {/* Main Brand Area */}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+          <div style={{
+            width: "96px",
+            height: "96px",
+            background: "#fff",
+            borderRadius: "28px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "48px",
+            boxShadow: "0 20px 40px rgba(0,0,0,.2)",
+            marginBottom: "24px"
+          }}>
+            🏪
+          </div>
+          <h1 style={{ fontSize: "40px", fontWeight: 800, color: "#fff", margin: 0, letterSpacing: "-1px" }}>DigiDukaan</h1>
+          <p style={{ fontSize: "16px", color: "rgba(255,255,255,.8)", marginTop: "8px", fontWeight: 500 }}>B2B Procurement Ecosystem</p>
+        </div>
+
+        {/* Middle Spacer */}
+        <div style={{ flex: 1 }} />
+
+        {/* Bottom Actions Area */}
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: "24px", paddingTop: "40px" }}>
+
+          <div style={{ background: "rgba(255,255,255,.15)", backdropFilter: "blur(10px)", padding: "12px 20px", borderRadius: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <span style={{ fontSize: "16px" }}>🌐</span>
+            <span style={{ color: "#fff", fontSize: "13px", fontWeight: 600, letterSpacing: ".5px" }}>POWERED BY ONDC</span>
+          </div>
+
+          <button
+            onClick={() => navigate("/login")}
+            style={{
+              width: "100%",
+              padding: "18px",
+              background: "#fff",
+              color: "var(--primary-dark)",
+              border: "none",
+              borderRadius: "16px",
+              fontSize: "16px",
+              fontWeight: 700,
+              boxShadow: "0 10px 25px rgba(0,0,0,.2)",
+              cursor: "pointer"
+            }}
+          >
+            GET STARTED →
+          </button>
+          <div style={{ fontSize: "12px", color: "rgba(255,255,255,.6)", fontWeight: 500 }}>
+            Version 2.5 • Phase 1 MVP
+          </div>
+        </div>
+
       </div>
-
-      <button
-        className="primary-btn"
-        style={{ marginTop: "40px", background: "white", color: "#1976D2" }}
-        onClick={() => navigate("/login")}
-      >
-        GET STARTED →
-      </button>
     </div>
   );
 }
-// export default function Splash() {
-//   return <h1>Splash Working</h1>;
-// }

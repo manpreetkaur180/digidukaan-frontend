@@ -6,29 +6,19 @@ export default function Layout({ children }) {
 
   const navItems = [
     { label: "Home", path: "/dashboard", icon: "🏠" },
-    { label: "Catalog", path: "/catalog", icon: "🛒" },
+    { label: "Catalog", path: "/catalog", icon: "🛍️" },
     { label: "Orders", path: "/orders", icon: "📦" },
+    { label: "Cart", path: "/cart", icon: "🛒" },
   ];
 
   return (
-    <div style={{ minHeight: "100vh", position: "relative" }}>
-      {children}
+    <div className="layout-container">
+      <div className="page-content">
+        {children}
+      </div>
 
       {/* Bottom Nav */}
-      <div
-        style={{
-          position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "60px",
-          background: "white",
-          borderTop: "1px solid #E0E0E0",
-          display: "flex",
-          justifyContent: "space-around",
-          alignItems: "center",
-        }}
-      >
+      <div className="bottom-nav">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;
 
@@ -36,15 +26,10 @@ export default function Layout({ children }) {
             <div
               key={item.path}
               onClick={() => navigate(item.path)}
-              style={{
-                textAlign: "center",
-                cursor: "pointer",
-                color: isActive ? "#1976D2" : "#757575",
-                fontWeight: isActive ? 600 : 400,
-              }}
+              className={`nav-item ${isActive ? "active" : ""}`}
             >
-              <div>{item.icon}</div>
-              <div style={{ fontSize: "12px" }}>{item.label}</div>
+              <div className="nav-icon">{item.icon}</div>
+              <div>{item.label}</div>
             </div>
           );
         })}
